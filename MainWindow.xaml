@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="443" Width="523.8">
+    <Grid Background="Black">
+        <Grid Height="30" Background="BlueViolet" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,8" Width="75">Profile Name</TextBlock>
+        </Grid>
+        <Grid Margin="0,30,0,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="80*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column ="0" Background="IndianRed" Width ="120" VerticalAlignment="Stretch" HorizontalAlignment="Left" Orientation="Vertical">
+                <TextBlock Background="Black" Foreground="Aqua" FontSize="18">Apllication 1</TextBlock>
+            </StackPanel>
+            <Grid x:Name="MyGrid" Background="Black"  HorizontalAlignment="Stretch" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name ="Add" Height="40" Width="40" Grid.Row="0" Grid.Column="0" FontSize="30" Click="Make_new">+</Button>
+            </Grid>
+        </Grid>
+
+
+
+    </Grid>
+</Window>    
