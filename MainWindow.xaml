@@ -1,0 +1,52 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="443" Width="523.8">
+    <Grid Background="Black">
+        <Grid Height="30" Background="#FF1F2130" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition Width="77*"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,8" Width="100" Grid.Column="1" FontSize="16" FontFamily="Sitka Subheading" Foreground="#FF6861AE">VICARATECH</TextBlock>
+        </Grid>
+        <Grid Margin="0,30,0,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="80*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Name ="MyPanel" Background="#FF010729" VerticalAlignment="Stretch" Orientation="Vertical" Grid.Column="0">
+
+                <Image Source="/Images/Vicara.jpg" Height="60"/>
+                <TextBlock  Height="24" FontFamily="Microsoft Sans Serif" FontWeight="Bold" Background="#FF030732" Foreground="#FFD0E2C3">APPLICATIONS</TextBlock>
+                <Button Background="#FF1B49DC" Foreground="Aqua" FontSize="12" Click="Page_2_load" Content="Spotify"/>
+            </StackPanel>
+            <Button Grid.Column="0" VerticalAlignment="Bottom" Click="Add_App" Foreground="#FFE6EAEE" Background="#FF1D49C1" >Add Applications</Button>
+            <Frame x:Name="Just_one_frame" Grid.Column="1" NavigationUIVisibility="Hidden" FontSize="24" Background="#FF474F64"></Frame>
+
+
+            <!--       <Grid x:Name="MyGrid" Background="Black" HorizontalAlignment="Stretch" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name ="Add" Height="40" Width="40" Grid.Row="0" Grid.Column="0" FontSize="30" Click="Make_new">+</Button>
+            </Grid> -->
+        </Grid>
+
+
+
+    </Grid>
+</Window>    
