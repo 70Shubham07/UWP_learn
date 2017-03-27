@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:App1.Model"   
+    mc:Ignorable="d">
+    <!--import the class Gesture for binding / xmlns:data-->
+    <!--It'll have to be imported into MainPage.Xaml.cs as well-->
+    <!--Then, in MainPage.aml.cf, a lift of thif claff' object haf to be created-->
+    <Page.Resources>
+        <!--Bind the data template to data:Gesture in App1.Model-->
+        <DataTemplate x:DataType="data:Gesture" x:Key="ForGestures">
+            <StackPanel HorizontalAlignment="Center">
+                <!--Following's attributes are binded to attributes of Gesture class-->
+                <Image Width="150" Source="{x:Bind GestureImage}"/>
+                <TextBlock FontSize="16" Text="{x:Bind GestureName}" HorizontalAlignment="Center"/>
+                <TextBlock FontSize="10" Text="{x:Bind GestureFunc}" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <!--Gestures is name of object (list type) and ForGesture is name of our StaticResource in Page.Resources-->
+        <!--Add the function AddToApp in MainPage.Xaml.cs for adding the application's selected gestures page-->
+        <GridView ItemsSource="{x:Bind Gestures}" IsItemClickEnabled="True" ItemClick="AddToApp" 
+                  ItemTemplate="{StaticResource ForGesture}">
+            
+        </GridView>
+        <!--Add the function Return_to_app_page for going back to selected gestures page for application-->
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Content="Go Back" Click="Return_to_app_page"></Button>
+        </StackPanel>
+
+    </Grid>
+</Page>
